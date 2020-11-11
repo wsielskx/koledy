@@ -1,0 +1,86 @@
+\documentclass[a5paper,twoside,10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[bookmarks]{hyperref}
+
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{indentfirst}
+\usepackage{framed}
+\usepackage{bookmark}
+
+% Change the leftbar width
+\renewenvironment{leftbar}[1][\hsize]
+{%
+\def\FrameCommand
+{%
+    {\vrule width 2pt}%
+    \hspace{0pt}%must no space.
+    \fboxsep=\FrameSep%
+}%
+\MakeFramed{\hsize#1\advance\hsize-\width\FrameRestore}%
+}
+{\endMakeFramed}
+
+% Do not prefix section with a number but still list it in content
+\makeatletter
+\def\@seccntformat#1{%
+  \expandafter\ifx\csname c@#1\endcsname\c@section\else
+  \csname the#1\endcsname\quad
+  \fi}
+\makeatother
+
+\newcommand*\stanza{%
+    \par
+    \begingroup
+    \parindent=0pt
+    \obeylines
+    \obeyspaces
+    \stanzax
+}
+\newcommand*\chorus{%
+    \par
+    \begingroup
+    \parindent=0pt
+    \obeylines
+    \obeyspaces
+    \begin{leftbar}
+    \chorusx
+}
+\newcommand\stanzax[1]{%
+    \filbreak
+    #1%
+    \vspace*{0.5cm}
+    \par
+    \endgroup
+}
+\newcommand\chorusx[1]{%
+    \filbreak
+    #1%
+    \end{leftbar}
+    \vspace*{0.5cm}
+    \par
+    \endgroup
+}
+
+\let\stdsection\section
+\renewcommand\section{\newpage\stdsection}
+
+\begin{document}
+\title{Kolędy i pastorałki}
+\author{Rodzina Sielskich}
+\date{Grudzień 2020}
+\maketitle
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\setcounter{page}{1}
+
+\begin{center}
+    \input{koledy}
+\end{center}
+
+\end{document}

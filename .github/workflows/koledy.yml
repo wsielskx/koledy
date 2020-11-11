@@ -21,9 +21,9 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
-          root_file: koledy.tex
+          root_file: spiewnik.tex
 
       - uses: actions/upload-artifact@v2
         with:
           name: PDF
-          path: koledy.pdf
+          path: spiewnik.pdf
