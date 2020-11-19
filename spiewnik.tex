@@ -1,4 +1,4 @@
-\documentclass[a5paper,twoside,10pt]{article}
+\documentclass[a5paper,twoside,12pt]{article}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[bookmarks]{hyperref}
@@ -13,9 +13,9 @@
 {%
 \def\FrameCommand
 {%
-    {\vrule width 2pt}%
-    \hspace{0pt}%must no space.
-    \fboxsep=\FrameSep%
+    {\vrule width 2pt}
+    \hspace{2pt}
+    \fboxsep=\FrameSep
 }%
 \MakeFramed{\hsize#1\advance\hsize-\width\FrameRestore}%
 }
@@ -73,7 +73,8 @@
 \pagestyle{empty}
 \maketitle
 
-\newpage
+\leavevmode\thispagestyle{empty}\newpage
+\leavevmode\thispagestyle{empty}\newpage
 
 \tableofcontents
 \newpage
