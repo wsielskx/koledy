@@ -21,9 +21,13 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
-          root_file: spiewnik.tex
+          root_file: |
+            spiewnik.tex
+            spiewnik-skladka.tex
 
       - uses: actions/upload-artifact@v2
         with:
           name: PDF
-          path: spiewnik.pdf
+          path: |
+            spiewnik.pdf
+            spiewnik-skladka.pdf
